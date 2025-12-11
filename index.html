@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nosso Canto - Espaço de Estudos</title>
-    <link rel="stylesheet" href="esstilo.css" />
+    <link rel="stylesheet" href="estilo.css" />
   </head>
   <body>
     <div class="grid-container">
@@ -28,14 +28,73 @@
       </nav>
 
       <main class="conteudo-central">
-        <section id="home" class="titulo-secao">
+        <div class="titulo-secao">
           <h2>Nosso Canto</h2>
-        </section>
+        </div>
 
         <div class="container-flex">
           <div class="conteudo-dinamico">
-            <section id="como-funciona" class="secao-conteudo ativa">
-              <h3>Como Funciona?</h3>
+            <section id="home" class="secao-conteudo ativa">
+              <h3>Nosso Objetivo</h3>
+              <p>
+                Enfrente os desafios, vença a procrastinação e descubra o poder
+                da constância. Nosso ambiente foi feito para quem não desiste,
+                para quem acredita no impossível e luta por um futuro melhor.
+              </p>
+              <ul class="carrossel">
+                <li>
+                  <img
+                    src="src/img/cabines.jpeg"
+                    alt="Cabines individuais com armários"
+                    class="carrossel-img"
+                  />
+                  <p>Cabines individuais com armários</p>
+                </li>
+                <li>
+                  <img
+                    src="src/img/canto-cafe.jpeg"
+                    alt="Cantinho para o café"
+                    class="carrossel-img"
+                  />
+                  <p>Cantinho para o café</p>
+                </li>
+                <li>
+                  <img
+                    src="src/img/cozinha.jpeg"
+                    alt="Cozinha compartilhada"
+                    class="carrossel-img"
+                  />
+                  <p>Cozinha compartilhada</p>
+                </li>
+                <li>
+                  <img
+                    src="src/img/interacao.jpeg"
+                    alt="Sala de interação"
+                    class="carrossel-img"
+                  />
+                  <p>Sala de interação</p>
+                </li>
+                <li>
+                  <img
+                    src="src/img/descanso.jpeg"
+                    alt="Sala de descanso"
+                    class="carrossel-img"
+                  />
+                  <p>Sala de descanso</p>
+                </li>
+                <li>
+                  <img
+                    src="src/img/estudo-grupo.jpeg"
+                    alt="Sala de estudo em grupo"
+                    class="carrossel-img"
+                  />
+                  <p>Sala de estudo em grupo</p>
+                </li>
+              </ul>
+            </section>
+
+            <section id="como-funciona" class="secao-conteudo">
+              <h3>Como Funciona</h3>
               <p class="paragrafo">
                 Nosso espaço foi cuidadosamente projetado para oferecer o
                 ambiente perfeito para seus estudos. Com cabines individuais
@@ -46,12 +105,6 @@
                 totalmente nos estudos.
               </p>
               <div class="inspiracao">
-                <p>
-                  Enfrente os desafios, vença a procrastinação e descubra o
-                  poder da constância. Nosso ambiente foi feito para quem não
-                  desiste, para quem acredita no impossível e luta por um futuro
-                  melhor.
-                </p>
                 <blockquote>
                   "O sucesso é a soma de pequenos esforços repetidos dia após
                   dia."
@@ -60,7 +113,7 @@
             </section>
 
             <section id="para-quem" class="secao-conteudo">
-              <h3>Para Quem?</h3>
+              <h3>Para Quem</h3>
               <div class="cards-grid">
                 <div class="card">
                   <h4>Concurseiros</h4>
@@ -163,7 +216,7 @@
 
           <aside class="foto-estudante">
             <img
-              src="estudante.png"
+              src="src/img/estudante.png"
               alt="Estudantes segurando livros"
               class="circulo-foto"
             />
@@ -210,20 +263,20 @@
           link.addEventListener("click", function (e) {
             const href = this.getAttribute("href");
 
-            if (href !== "#home") {
-              e.preventDefault();
-              links.forEach((link) => link.classList.remove("active"));
-              this.classList.add("active");
-              mostrarSecao(href);
+            // if (href !== "#home") {
+            e.preventDefault();
+            links.forEach((link) => link.classList.remove("active"));
+            this.classList.add("active");
+            mostrarSecao(href);
 
-              document.querySelector(".conteudo-central").scrollIntoView({
-                behavior: "smooth",
-              });
-            }
+            document.querySelector(".conteudo-central").scrollIntoView({
+              behavior: "smooth",
+            });
+            // }
           });
         });
 
-        mostrarSecao("#como-funciona");
+        mostrarSecao("#home");
       });
 
       function mostrarDetalhes(plano) {

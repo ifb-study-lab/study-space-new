@@ -287,6 +287,7 @@ html {
 .localizacao p {
   font-size: 1.1rem;
   margin-bottom: 20px;
+  /* margin-top: 40px; */
 }
 
 .mapa-placeholder {
@@ -296,19 +297,23 @@ html {
   padding: 60px 20px;
   text-align: center;
   margin-top: 20px;
-  max-width: 20vw;
+  /* max-width: 20vw; */
 }
 
 .mapa-placeholder p {
   font-size: 2rem;
   color: #999;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .inspiracao {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-top: 2px;
   border-radius: 15px;
   text-align: center;
 }
@@ -412,6 +417,104 @@ html {
   font-size: 0.85rem;
   margin-top: 7px;
   color: #555;
+}
+
+.carrossel {
+  width: 35vw;
+  height: 350px;
+  display: flex;
+  gap: 4vw;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  anchor-name: --carrossel;
+  scroll-marker-group: after;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carrossel::scroll-marker-group {
+  position: absolute;
+  position-anchor: --carrossel;
+  top: calc(anchor(bottom) - 80px);
+  justify-self: anchor-center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.carrossel::scroll-button(*) {
+  border: 0;
+  font-size: 2rem;
+  background: none;
+  color: #4a90e2;
+  opacity: 0.7;
+  cursor: pointer;
+  position: absolute;
+  position-anchor: --carrossel;
+}
+
+.carrossel::scroll-button(*):hover,
+.carrossel::scroll-button(*):focus {
+  opacity: 1;
+}
+
+.carrossel::scroll-button(*):active {
+  translate: 1px 1px;
+}
+
+.carrossel::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: unset;
+}
+
+.carrossel::scroll-button(left) {
+  content: "◄";
+  right: calc(anchor(left) - 80px);
+  bottom: calc(anchor(top) - 190px);
+}
+
+.carrossel::scroll-button(right) {
+  content: "►";
+  left: calc(anchor(right) - 80px);
+  bottom: calc(anchor(top) - 190px);
+}
+
+.carrossel li {
+  list-style-type: none;
+  /* background-color: #eeeeee; */
+  /* border: 1px solid #dddddd; */
+  padding: 10px;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+
+.carrossel li p {
+  color: #555;
+  text-align: center;
+}
+
+.carrossel li::scroll-marker {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.carrossel li::scroll-marker:target-current {
+  background-color: #4a90e2;
+}
+
+.carrossel-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 1024px) {
