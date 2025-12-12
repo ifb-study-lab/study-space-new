@@ -13,7 +13,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #f5f5f5;
-  background-image: url("banner-v2.avif");
+  background-image: url("../img/banner-v2.avif");
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -536,6 +536,8 @@ footer {
 
 /* ########## ################### ########## */
 
+/* ########## COMODIDADES ########## */
+
 .titulo-subsecao {
   text-align: center;
   margin-bottom: 20px;
@@ -561,10 +563,12 @@ footer {
   gap: 10px;
   font-weight: 600;
   color: #555;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item-comodidade:hover {
-  transform: translateX(5px);
-  border-color: var(--cor-principal);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* ########## ################### ########## */
