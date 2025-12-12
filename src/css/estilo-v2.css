@@ -369,39 +369,51 @@ footer {
 
 /* ########## PARCEIROS ########## */
 
-.coluna-patrocinios {
+/* .coluna-patrocinios {
   grid-area: patrocinios;
-  background-color: var(--cor-fundo-2, #d3d3d3);
+  background-color: #d3d3d3;
   padding: 10px 10px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   border-radius: 8px;
-}
+} */
 
 .coluna-patrocinios h3 {
   font-size: 1.2rem;
-  color: var(--cor-texto-1, #2c3e50);
+  color: #2c3e50;
   text-align: center;
 }
 
 .logo-item {
-  background-color: var(--cor-fundo-1, #fff); /* Fundo do item */
+  background-color: #fff;
   padding: 15px 10px;
   border-radius: 6px;
   text-align: center;
-  color: var(--cor-texto-1, #95a5a6); /* Cor do texto do logo */
+  color: #95a5a6;
   font-weight: bold;
   font-size: 0.85rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  gap: 15px;
+  padding-left: 20px;
+}
+
+.logo-item img {
+  width: 24px;
+  height: 24px;
+}
+
+.logo-item span {
+  font-weight: 600;
+  color: #555;
 }
 
 .logo-item:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
 }
 
 .logos-patrocinios {
@@ -540,8 +552,8 @@ footer {
 
 .titulo-subsecao {
   text-align: center;
-  margin-bottom: 20px;
-  color: var(--cor-principal);
+  margin-bottom: 12px;
+  color: #2c3e50;
   font-size: 1.3rem;
 }
 
