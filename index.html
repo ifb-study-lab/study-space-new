@@ -24,6 +24,7 @@
           <li><a href="#planos">Planos</a></li>
           <!-- <li><a href="#descubra">Descubra</a></li> -->
           <li><a href="#conhecer">Venha nos conhecer</a></li>
+          <li><a href="#perguntar">Faça uma Pergunta</a></li>
         </ul>
       </nav>
 
@@ -234,6 +235,61 @@
                 </blockquote>
               </div>
             </section>
+
+            <section id="perguntar" class="secao-conteudo">
+              <h3>Faça uma Pergunta</h3>
+              <p class="paragrafo">
+                Tem alguma dúvida sobre nosso espaço? Envie sua pergunta abaixo.
+                Se precisar, você pode anexar um arquivo PDF (máximo 10 MB) para
+                nos ajudar a entender melhor o que você precisa.
+              </p>
+
+              <form id="form-pergunta" class="form-pergunta" novalidate>
+                <div>
+                  <label for="texto-pergunta">Sua pergunta *</label>
+                  <textarea
+                    id="texto-pergunta"
+                    name="pergunta"
+                    rows="4"
+                    placeholder="Escreva sua dúvida aqui…"
+                  ></textarea>
+                  <span id="question-error" class="question-error"
+                    >Por favor, escreva sua pergunta antes de enviar.</span
+                  >
+                </div>
+
+                <div>
+                  <label>Anexar PDF (opcional)</label>
+                  <div id="drop-zone" class="drop-zone" role="button" tabindex="0" aria-label="Área para arrastar e soltar arquivo PDF ou clicar para selecionar" aria-describedby="file-hint">
+                    <div class="drop-icon">📎</div>
+                    <strong>Arraste e solte seu PDF aqui</strong>
+                    <p>ou clique para selecionar o arquivo</p>
+                  </div>
+                  <input
+                    type="file"
+                    id="arquivo-pergunta"
+                    name="arquivo"
+                    accept=".pdf,application/pdf"
+                    style="display: none"
+                    aria-label="Selecionar arquivo PDF"
+                  />
+                  <p class="file-hint" id="file-hint">
+                    Apenas arquivos PDF são aceitos · Tamanho máximo: 10 MB
+                  </p>
+                  <div id="file-error" class="file-error" role="alert"></div>
+                  <div id="file-info" class="file-info" role="status"></div>
+                </div>
+
+                <div id="form-success" class="form-success" role="status">
+                  ✅ Sua pergunta foi enviada com sucesso! Entraremos em contato
+                  em breve.
+                </div>
+
+                <button type="submit" id="submit-pergunta" class="btn-enviar">
+                  Enviar Pergunta
+                </button>
+              </form>
+            </section>
           </div>
 
           <aside class="foto-estudante">
@@ -282,6 +338,7 @@
       </footer>
     </div>
 
+    <script src="src/js/pergunta.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const links = document.querySelectorAll(".menu-lateral a");
@@ -314,6 +371,7 @@
         });
 
         mostrarSecao("#home");
+        initPerguntaForm();
       });
 
       function mostrarDetalhes(plano) {

@@ -598,6 +598,132 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* ########## FORMULÁRIO – FAÇA UMA PERGUNTA ########## */
+
+.form-pergunta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 680px;
+}
+
+.form-pergunta label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.form-pergunta textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.form-pergunta textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+.drop-zone {
+  border: 2px dashed #3498db;
+  border-radius: 10px;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  color: #555;
+  background-color: #f0f7ff;
+  transition: background-color 0.2s, border-color 0.2s;
+  user-select: none;
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+  background-color: #dceeff;
+  border-color: #2980b9;
+}
+
+.drop-zone p {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.drop-zone .drop-icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.file-hint {
+  font-size: 0.82rem;
+  color: #888;
+  margin-top: -8px;
+}
+
+.file-error {
+  display: none;
+  color: #c0392b;
+  background-color: #fdecea;
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+}
+
+.file-info {
+  display: none;
+  color: #27ae60;
+  background-color: #eafaf1;
+  border: 1px solid #2ecc71;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+}
+
+.question-error {
+  display: none;
+  color: #c0392b;
+  font-size: 0.87rem;
+  margin-top: -10px;
+}
+
+.form-success {
+  display: none;
+  color: #1a6e3b;
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+}
+
+.btn-enviar {
+  align-self: flex-start;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-enviar:hover {
+  background-color: #2980b9;
+}
+
+.btn-enviar:active {
+  transform: scale(0.98);
+}
+
 /* ########## ################### ########## */
 
 @media (max-width: 1024px) {

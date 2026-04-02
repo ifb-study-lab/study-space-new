@@ -1,0 +1,15 @@
+{
+  "name": "study-space-new",
+  "version": "1.0.0",
+  "description": "Nosso Canto - Espaço de Estudos",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/tests/**/*.test.js"]
+  }
+}
